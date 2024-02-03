@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:tictactoe/resource/socket_client.dart';
+import 'package:tictactoe/screens/game_screen.dart';
 
 class SocketMethods {
   final _socketClient = SocketClient.instance.socket!;
@@ -8,5 +10,12 @@ class SocketMethods {
         'nickname': nickname,
       });
     }
+  }
+
+  void createRoomSuccessListener(BuildContext context) {
+    _socketClient.on("createRoomSuccess", (room) {
+      print(room);
+      Navigator.pushNamed(context, GameScreen.routeName);
+    });
   }
 }
