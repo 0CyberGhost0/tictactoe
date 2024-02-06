@@ -14,16 +14,24 @@ class JoinRoomScreen extends StatefulWidget {
 }
 
 class _JoinRoomScreenState extends State<JoinRoomScreen> {
+  final TextEditingController _nameController = new TextEditingController();
+  final TextEditingController _gameIDController = new TextEditingController();
+  final SocketMethods _socketMethods = SocketMethods();
+  @override
+  void initState() {
+    super.initState();
+    _socketMethods.joinRoomSuccessListener(context);
+    _socketMethods.errorOccuredListener(context);
+  }
+
+  void dispose() {
+    super.dispose();
+    _nameController.dispose();
+    _gameIDController.dispose();
+  }
+
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final TextEditingController _nameController = new TextEditingController();
-    final TextEditingController _gameIDController = new TextEditingController();
-    final SocketMethods _socketMethods = SocketMethods();
-    void dispose() {
-      super.dispose();
-      _nameController.dispose();
-      _gameIDController.dispose();
-    }
 
     return Scaffold(
       body: Responsive(
@@ -52,7 +60,7 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
                 height: size.height * 0.045,
               ),
               CustomButton(
-                  onTap: () => SocketMethods.joinRoom(
+                  onTap: () => _socketMethods.joinRoom(
                       _nameController.text, _gameIDController.text),
                   text: "Join"),
             ],
