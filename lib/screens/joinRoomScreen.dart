@@ -22,6 +22,7 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
     super.initState();
     _socketMethods.joinRoomSuccessListener(context);
     _socketMethods.errorOccuredListener(context);
+    _socketMethods.updatePlayersStateListener(context);
   }
 
   void dispose() {
@@ -43,9 +44,13 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CustomText(shadows: [
-                BoxShadow(color: Colors.blue, spreadRadius: 2, blurRadius: 40)
-              ], text: "Join Room", fontSize: 70),
+              CustomText(
+                shadows: [
+                  BoxShadow(color: Colors.blue, spreadRadius: 2, blurRadius: 40)
+                ],
+                text: "Join Room",
+                fontSize: 70,
+              ),
               SizedBox(
                 height: size.height * 0.08,
               ),
@@ -60,9 +65,10 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
                 height: size.height * 0.045,
               ),
               CustomButton(
-                  onTap: () => _socketMethods.joinRoom(
-                      _nameController.text, _gameIDController.text),
-                  text: "Join"),
+                onTap: () => _socketMethods.joinRoom(
+                    _nameController.text, _gameIDController.text),
+                text: "Join",
+              ),
             ],
           ),
         ),

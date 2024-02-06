@@ -50,4 +50,11 @@ class SocketMethods {
       showSnackBar(context, data);
     });
   }
+
+  void updatePlayersStateListener(BuildContext context) {
+    _socketClient.on('updatedPlayers', (playerData) {
+      Provider.of(context, listen: false).updatePlayer1(playerData[0]);
+      Provider.of(context, listen: false).updatePlayer2(playerData[1]);
+    });
+  }
 }
