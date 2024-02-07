@@ -7,13 +7,13 @@ class RoomDataProvider extends ChangeNotifier {
   Player _player1 = Player(
     nickname: '',
     socketID: '',
-    points: 0.0,
+    points: 0,
     playerType: 'X',
   );
   Player _player2 = Player(
     nickname: '',
     socketID: '',
-    points: 0.0,
+    points: 0,
     playerType: 'O',
   );
   Player get player1 => _player1;

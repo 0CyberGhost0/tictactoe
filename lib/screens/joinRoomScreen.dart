@@ -14,8 +14,8 @@ class JoinRoomScreen extends StatefulWidget {
 }
 
 class _JoinRoomScreenState extends State<JoinRoomScreen> {
-  final TextEditingController _nameController = new TextEditingController();
-  final TextEditingController _gameIDController = new TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _gameIDController = TextEditingController();
   final SocketMethods _socketMethods = SocketMethods();
   @override
   void initState() {

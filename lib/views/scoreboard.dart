@@ -35,8 +35,17 @@ class Scoreboard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Nickname2'),
-              Text('points2'),
+              Text(
+                roomDataProvider.player2.nickname,
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              Text(
+                roomDataProvider.player2.points.toInt().toString(),
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
             ],
           ),
         ),
