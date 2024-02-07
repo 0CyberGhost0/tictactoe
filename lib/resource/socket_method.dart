@@ -4,9 +4,11 @@ import 'package:tictactoe/provider/room_data_provider.dart';
 import 'package:tictactoe/resource/socket_client.dart';
 import 'package:tictactoe/screens/game_screen.dart';
 import 'package:tictactoe/utils/utils.dart';
+import 'package:socket_io_client/socket_io_client.dart';
 
 class SocketMethods {
   final _socketClient = SocketClient.instance.socket!;
+  Socket get socketClient => _socketClient;
   //emits
   void createRoom(String nickname) {
     if (nickname.isNotEmpty) {
@@ -20,6 +22,15 @@ class SocketMethods {
     if (nickname.isNotEmpty && roomId.isNotEmpty) {
       _socketClient.emit('joinRoom', {
         'nickname': nickname,
+        'roomId': roomId,
+      });
+    }
+  }
+
+  void tapGrid(int index, String roomId, List<String> displayElements) {
+    if (displayElements[index] == '') {
+      _socketClient.emit('tap', {
+        'index': index,
         'roomId': roomId,
       });
     }
@@ -64,6 +75,18 @@ class SocketMethods {
     _socketClient.on('updateRoom', (room) {
       Provider.of<RoomDataProvider>(context, listen: false)
           .updateRoomData(room);
+    });
+  }
+
+  void tappedListener(BuildContext context) {
+    _socketClient.on('tapped', (data) {
+      RoomDataProvider roomDataProvider =
+          Provider.of<RoomDataProvider>(context, listen: false);
+      roomDataProvider.updateDisplayElements(
+        data['index'],
+        data['choice'],
+      );
+      roomDataProvider.updateRoomData(data['room']);
     });
   }
 }
