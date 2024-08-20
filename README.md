@@ -24,4 +24,4 @@ X's & O's is a cross-platform multiplayer TicTacToe game developed using Flutter
 ### Backend Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/xs-and-os.git](https://github.com/0CyberGhost0/tictactoe.git
+   git clone https://github.com/0CyberGhost0/tictactoe.git
