@@ -2,6 +2,22 @@
 
 ## Overview
 X's & O's is a cross-platform multiplayer TicTacToe game developed using Flutter, Node.js, Express.js, Socket.io, and MongoDB. This project provides an engaging and responsive gaming experience across iOS and Android platforms.
+ ## Screenshots
+- **Create Room**
+
+- 
+![image](https://github.com/user-attachments/assets/cd0cbb51-104d-471f-961d-dfe2ab64224d)
+
+- **Join Room**
+- 
+![image](https://github.com/user-attachments/assets/80008e59-1150-437d-b7b1-c3ff923a07e3)
+
+- **Play Arena** 
+
+![image](https://github.com/user-attachments/assets/504a1db3-b5be-4e2b-8967-796c3f2a6b3c)
+
+
+
 
 ## Features
 - **Cross-Platform:** Built with Flutter, ensuring seamless performance on both iOS and Android devices.
