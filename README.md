@@ -1,93 +1,27 @@
-# TicTacToe App
+# X's & O's: Multiplayer TicTacToe Game
 
-A real-time multiplayer TicTacToe game built using Flutter for the frontend and Node.js with Express, MongoDB, and Socket.IO for the backend.
+## Overview
+X's & O's is a cross-platform multiplayer TicTacToe game developed using Flutter, Node.js, Express.js, Socket.io, and MongoDB. This project provides an engaging and responsive gaming experience across iOS and Android platforms.
 
 ## Features
-
-- Real-time multiplayer functionality
-- User authentication
-- Persistent game state storage
-- Responsive UI for both Android and iOS
-- Simple and intuitive gameplay
-
-## Technologies Used
-
-### Frontend
-
-- **Flutter**: For building the cross-platform mobile application
-
-### Backend
-
-- **Node.js**: Runtime environment
-- **Express**: Web framework for Node.js
-- **MongoDB**: NoSQL database for storing game state and user information
-- **Socket.IO**: Library for real-time web applications
-
-## Getting Started
-
-### Prerequisites
-
-- [Flutter](https://flutter.dev/docs/get-started/install) installed
-- [Node.js](https://nodejs.org/en/download/) installed
-- [MongoDB](https://docs.mongodb.com/manual/installation/) installed and running
-
-### Installation
-
-#### Backend
-
-1. Clone the repository:
-
-    ```sh
-    git clone https://github.com/yourusername/tictactoe.git
-    cd tictactoe/backend
-    ```
-
-2. Install dependencies:
-
-    ```sh
-    npm install
-    ```
-
-3. Create a `.env` file in the `backend` directory and add your MongoDB URI:
-
-    ```env
-    MONGO_URI=your_mongodb_uri
-    ```
-
-4. Start the server:
-
-    ```sh
-    npm start
-    ```
-
-#### Frontend
-
-1. Navigate to the `frontend` directory:
-
-    ```sh
-    cd ../frontend
-    ```
-
-2. Get Flutter dependencies:
-
-    ```sh
-    flutter pub get
-    ```
-
-3. Run the Flutter app:
-
-    ```sh
-    flutter run
-    ```
-
-## Usage
-
-1. Open the app on your mobile device or emulator.
-2. Register or log in to your account.
-3. Start a new game or join an existing game with a friend.
-4. Enjoy playing TicTacToe in real-time!
+- **Cross-Platform:** Built with Flutter, ensuring seamless performance on both iOS and Android devices.
+- **Real-Time Gameplay:** Utilizes Socket.io for real-time communication, providing smooth and responsive matches.
+- **Backend Logic:** Powered by Node.js and Express.js, ensuring efficient handling of game logic and player interactions.
+- **Database Integration:** MongoDB is used to store game data, player information, and match history.
 
 ## Project Structure
+- **Flutter Frontend:** The client-side application built with Flutter.
+- **Node.js Backend:** The server-side application built with Node.js and Express.js.
+- **Socket.io:** Facilitates real-time communication between players during the game.
+- **MongoDB:** Used as the database to manage game state, player records, and more.
 
-### Frontend
-
+## Installation & Setup
+### Prerequisites
+- [Flutter](https://flutter.dev/docs/get-started/install)
+- [Node.js](https://nodejs.org/en/download/)
+- [MongoDB](https://www.mongodb.com/try/download/community)
+  
+### Backend Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/xs-and-os.git
